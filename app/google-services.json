@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "269568654799",
+    "firebase_url": "https://iot-project-254e6.firebaseio.com",
+    "project_id": "iot-project-254e6",
+    "storage_bucket": "iot-project-254e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269568654799:android:ca5e80ff8f00da2c",
+        "android_client_info": {
+          "package_name": "com.smartpill.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269568654799-af6km79asucreflc4keqea9lf25m0roc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCije0j0bQVmdmW9HN7Tfq9LwjOhGV6PMU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269568654799:android:39f9e9794c6dae12",
+        "android_client_info": {
+          "package_name": "com.example.ranjana.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269568654799-5bfefo961tkg1mae9ge02cpru64rpt7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ranjana.myapplication",
+            "certificate_hash": "ce5b3d9b657277281b2d25742928d0326071e91a"
+          }
+        },
+        {
+          "client_id": "269568654799-af6km79asucreflc4keqea9lf25m0roc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCije0j0bQVmdmW9HN7Tfq9LwjOhGV6PMU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269568654799-af6km79asucreflc4keqea9lf25m0roc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
