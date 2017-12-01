@@ -1,5 +1,8 @@
 package com.example.ranjana.myapplication;
 
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+import static android.bluetooth.BluetoothDevice.ACTION_FOUND;
+
 public class User_Activity extends AppCompatActivity {
 
     @Override
@@ -31,6 +36,24 @@ public class User_Activity extends AppCompatActivity {
                 new RegDevice().execute();
             }
         });
+
+       /* Button button1 = (Button) findViewById(R.id.AuthDoc);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AuthDoctor().execute();
+            }
+        });*/
+    }
+    public void goToDoctorPage(View view)
+    {
+        Intent intent = new Intent(User_Activity.this, Doctor.class);
+        startActivity(intent);
+    }
+    public void goToDosage(View view)
+    {
+        Intent intent = new Intent(User_Activity.this, View_Dosage_Details.class);
+        startActivity(intent);
     }
     private SharedPreferences GetSharedPreferences()
     {
@@ -45,11 +68,22 @@ public class User_Activity extends AppCompatActivity {
         editor.apply();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     public long getToken()
     {
         SharedPreferences sh = GetSharedPreferences();
         return sh.getLong("id", -1);
     }
+
+    public void sendDataToPi(View view)
+    {
+
+    }
+
     public class RegDevice extends AsyncTask<Void,Void,Boolean>{
         PillBottleIdWrapper idWrapper;
         @Override

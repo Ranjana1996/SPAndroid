@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -41,8 +42,9 @@ public class AuthorizeDoctor extends AppCompatActivity {
                         .addHeader("content-type", "application/json")
                         .addHeader("authorization", "Bearer "+token)
                         .build();
-
+                Log.v("Doctor Request",request.toString());
                 Response response = client.newCall(request).execute();
+
             }
 
             catch (Exception e)

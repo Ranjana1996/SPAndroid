@@ -2,23 +2,66 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/RegisterBottle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ranjana.myapplication.User_Activity">
 
-    <Button
-        android:id="@+id/RegisterBottle1"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="261dp"
-        android:layout_height="66dp"
-        android:background="@color/colorPrimary"
-        android:fontFamily="casual"
-        android:text=" Register Bottle"
-        android:textColor="@android:color/background_light"
-        android:textStyle="italic"
-        android:typeface="serif"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="16dp" />
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
+        <Button
+            android:id="@+id/RegisterBottle1"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="65dp"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="monospace"
+            android:text="Register Bottle"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/AuthDoctor"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="65dp"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="monospace"
+            android:onClick="goToDoctorPage"
+            android:text="Authorize Doctor"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/GetDetails"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="monospace"
+            android:onClick="goToDosage"
+            android:text="View Details"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 </android.support.constraint.ConstraintLayout>

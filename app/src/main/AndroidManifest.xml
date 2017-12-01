@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -35,7 +36,44 @@
         </service>
 
         <activity android:name=".RegisterUser" />
-        <activity android:name=".AuthorizeDoctor"></activity>
+        <activity android:name=".AuthorizeDoctor" />
+        <activity android:name=".View_Dosage_Details" />
+        <activity android:name=".Doctor" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Bluetooth"
+            android:label="@string/title_activity_bluetooth"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".MyIntentService"
+            android:exported="false" />
+        <service
+            android:name=".BluetoothService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".ConnectedReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACTION_FOUND" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".DisconnectedReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".WifiService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

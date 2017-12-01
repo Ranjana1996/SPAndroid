@@ -16,4 +16,5 @@
     </string>
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_register__user">Register_User</string>
+    <string name="title_activity_bluetooth">Bluetooth</string>
 </resources>

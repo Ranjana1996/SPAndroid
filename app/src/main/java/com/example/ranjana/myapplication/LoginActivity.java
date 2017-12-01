@@ -3,7 +3,12 @@ package com.example.ranjana.myapplication;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 
@@ -41,6 +46,10 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import static android.bluetooth.BluetoothDevice.ACTION_ACL_CONNECTED;
+import static android.bluetooth.BluetoothDevice.ACTION_ACL_DISCONNECTED;
+import static android.bluetooth.BluetoothDevice.ACTION_FOUND;
+
 /**
  * A login screen that offers login via email/password.
  */
@@ -51,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * Id to identity READ_CONTACTS permission request.
      */
-    //private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -64,7 +72,8 @@ public class LoginActivity extends AppCompatActivity {
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
-
+    private BroadcastReceiver mConnectedReceiver;
+    private BroadcastReceiver mDisconnectedReceiver;
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
@@ -102,17 +111,17 @@ public class LoginActivity extends AppCompatActivity {
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-       /* Button button = (Button)findViewById(R.id.Register);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new RegisterUser().execute();
-            }
-        });*/
+       Button button = (Button)findViewById(R.id.Register);
     }
+
     public void goToRegisterPage(View view)
     {
         Intent intent = new Intent(LoginActivity.this, RegisterUser.class);
+        startActivity(intent);
+    }
+    public void gotest(View view)
+    {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -129,6 +138,11 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, User_Activity.class);
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     private void attemptLogin() {
@@ -349,6 +363,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         }
+
     }
 
 
